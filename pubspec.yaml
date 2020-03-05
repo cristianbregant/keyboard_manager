@@ -1,7 +1,7 @@
 name: keyboard_manager
-description: Keyboard event listening made simple.
-version: 0.2.0
-homepage: 
+description: Widget made to intercept keyboard key press and do what you want.
+version: 0.2.1
+homepage: https://github.com/cristianbregant/keyboard_manager
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

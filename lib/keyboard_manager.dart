@@ -9,8 +9,13 @@ class Keyboard {
   final VoidCallback right;
   final VoidCallback enter;
   final VoidCallback menu;
+  final VoidCallback guide;
+  final VoidCallback info;
+  final VoidCallback mediaPlay;
+  final VoidCallback mediaPause;
+  final VoidCallback mediaPlayPause;
 
-  Keyboard({this.up, this.right, this.down, this.left, this.enter, this.menu});
+  Keyboard({this.up, this.right, this.down, this.left, this.enter, this.menu,this.guide,this.info,this.mediaPlay,this.mediaPause,this.mediaPlayPause});
 
   /// The manager of the keyboard, this method contains every button supported
   manager(RawKeyEvent key) async {
@@ -38,11 +43,26 @@ class Keyboard {
         case 20: //freccia giù
           if (down != null) down();
           break;
-        case 260: //freccia giù
+        case 260: //freccia left
           if (left != null) left();
           break;
-        case 261: //freccia giù
+        case 261: //freccia right
           if (right != null) right();
+          break;
+        case 172: //guide
+          if (guide != null) guide();
+          break;
+        case 165: //info
+          if (info != null) info();
+          break;
+        case 127: //pause
+          if (mediaPause != null) mediaPause();
+          break;
+        case 126: //play
+          if (mediaPlay != null) mediaPlay();
+          break;
+        case 85: //play pause
+          if (mediaPlayPause != null) mediaPlayPause();
           break;
         default:
           print("not managed");
